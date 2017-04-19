@@ -1,4 +1,7 @@
-# js-randomizers
+
+# PartnerPicker
+Random Group Picker
+I Changed the ReadME 
 js randomization applications
 
 The name randomizer and name caller will accept a stream of names separated by a space or a comma
@@ -8,3 +11,4 @@ See the applications in action here:<br>
 <a href= "http://www.extrasleepy.com/randompartner">http://www.extrasleepy.com/randompartner</a><br>
 <a href= "http://www.extrasleepy.com/randomcall">http://www.extrasleepy.com/randomcall</a><br>
 <a href= "http://www.extrasleepy.com/randomizer">http://www.extrasleepy.com/randomizer</a>
+
