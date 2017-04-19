@@ -1,0 +1,46 @@
+<!--The random student call will accept a stream of names separated by a space or a comma!-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+  
+        <br>
+        <div align = "center">
+        <h1><b>Random Call</b></h1>
+        <br> 
+
+        <input type="text" id="myText" style="height:20px;" size="120" value="" onclick="JudgeInputAndSetPosition()"> 
+
+        <br> 
+        <br> 
+        <button onclick="myFunction2()">Add Name(s)</button>
+        <button onclick="myFunction()">Call on Someone!</button>
+        <button type="button1" onclick="location.reload();">Reset</button>
+        <h1>
+        <p id="output"></p>
+        </h1>
+<script>
+
+var names = [];
+
+function myFunction() {
+    if (names.length!=0){
+        var thing = Math.floor(Math.random()*names.length);
+        document.getElementById("output").innerHTML += names[thing] + "</br>";
+        names.splice(thing,1);
+    }
+}
+
+function myFunction2() {
+    var x = document.getElementById("myText").value;
+    var namesArray = x.split(/[\s,]+/);
+    for (i = 0; i < namesArray.length; i++) { 
+        names.splice(0,0,namesArray[i]);
+    }
+    document.getElementById("myText").value="";
+}
+</script>
+
+        </div>
+    </body>
+</html>
