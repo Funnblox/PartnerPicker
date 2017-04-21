@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-    <body>
+    <body onload="parseQuery()">
   
         <br>
         <div align = "center">
@@ -34,8 +34,14 @@ var queryString = window.location.search;
 // void setup(){
 
 function parseQuery(queryString) {
+var queryString = window.location.search;
 var queries = queryString.slice(41);
-names = queries
+var namesArray = queries.split(/[\s,]+/);
+    console.log(namesArray)
+    for (i = 0; i < namesArray.length; i++) { 
+        names.splice(0,0,namesArray[i]);
+    }
+document.getElementById("class").innerHTML = "Class: " + names
 }
 // }
 
