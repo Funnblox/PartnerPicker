@@ -20,6 +20,7 @@
         <button onclick="addNames()">Add Name(s)</button>
         <button onclick="beginRandomize()">Randomize</button>
         <button type="button1" onclick="location.reload();">Reset</button>
+        <button id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
         <h1>
         <p id="output"></p>
         <p id="class"></p>
@@ -29,6 +30,19 @@
 var names = [];
 var random = [];
 var Gs = 2;
+var queryString = window.location.search;
+// void setup(){
+
+function parseQuery(queryString) {
+var queries = queryString.slice(41);
+names = queries
+}
+// }
+
+function getUrl(text) {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", "http://www.extrasleepy.com/randompartner?" + names);
+}
+
 function SetGroupSize(){
 	Gs = document.getElementById("GroupSize").value
 	// var Gs = document.getElementById("GroupSize").value
