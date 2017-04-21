@@ -1,0 +1,108 @@
+<!--The name randomizer will accept a stream of names separated by a space or a comma!-->
+
+<!DOCTYPE html>
+<html>
+    <body onload="parseQuery()">
+  
+        <br>
+        <div align = "center">
+        <h1><b>Random Partners</b></h1>
+        <br> 
+
+        <input type="text" id="myText" style="height:20px;" size="120" value="" onclick="JudgeInputAndSetPosition()"> 
+       
+        <br> 
+        <h1 id="GroupSizeTitle"></h1>
+         <input type="text" id="GroupSize" style="height:20px;" size="10" value="2" > 
+         <button onclick="SetGroupSize()">Set Group Size</button>
+        <br> 
+         <br> 
+        <button onclick="addNames()">Add Name(s)</button>
+        <button onclick="beginRandomize()">Randomize</button>
+        <button type="button1" onclick="location.reload();">Reset</button>
+        <button id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
+        <h1>
+        <p id="output"></p>
+        <p id="class"></p>
+        </h1>
+<script>
+
+var names = [];
+var random = [];
+var Gs = 2;
+var queryString = window.location.search;
+// void setup(){
+
+function parseQuery(queryString) {
+var queryString = window.location.search;
+var queries = queryString.slice(41);
+var namesArray = queries.split(/[\s,]+/);
+    console.log(namesArray)
+    for (i = 0; i < namesArray.length; i++) { 
+        names.splice(0,0,namesArray[i]);
+    }
+document.getElementById("class").innerHTML = "Class: " + names
+}
+// }
+
+function getUrl(text) {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", "http://www.extrasleepy.com/randompartner?" + names);
+}
+
+function SetGroupSize(){
+	Gs = document.getElementById("GroupSize").value
+	// var Gs = document.getElementById("GroupSize").value
+  document.getElementById("GroupSizeTitle").innerHTML = "Group Size = " + Gs
+}
+
+function beginRandomize() {
+    document.getElementById("output").innerHTML = ""; //clear previous randomized names
+    randomizeNames(names.slice(),Gs); //pass in a copy of the names array
+    //document.getElementById("output").innerHTML += "</br>"; //instead of clearing, could add a new line between
+}
+
+function createRandom(names){
+for(z = 0; z<names.length; z++){
+    		var randomNumber = Math.floor(Math.random()*names.length);
+random.splice(0,0,randomNumber);
+    	}
+    	console.log(GroupSize)
+    }
+
+function randomizeNames(names,Gs) {
+    for (i = 0; i <  names.length; i++) { 
+for (z = 0; z < Gs-1; z++){
+         var random1 = Math.floor(Math.random()*names.length);
+        document.getElementById("output").innerHTML += names[random1] + "  +  ";
+        names.splice(random1,1);
+        // var random2 = Math.floor(Math.random()*names.length);
+        // document.getElementById("output").innerHTML += names[random2] + "</br>";
+        // names.splice(random2,1);
+    }
+    random1 = Math.floor(Math.random()*names.length);
+        document.getElementById("output").innerHTML += names[random1] + "</br>";
+        names.splice(random1,1);
+}
+    if (names.length>0) {
+        randomizeNames(names);
+    }
+}
+
+function addNames() {
+    var x = document.getElementById("myText").value;
+    var namesArray = x.split(/[\s,]+/);
+    console.log(namesArray)
+    for (i = 0; i < namesArray.length; i++) { 
+        names.splice(0,0,namesArray[i]);
+    }
+    document.getElementById("myText").value="";
+   
+    document.getElementById("class").innerHTML = "Class: " + names
+}
+
+</script>
+
+        </div>
+    </body>
+</html>
+
