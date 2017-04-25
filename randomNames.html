@@ -35,7 +35,8 @@ var queryString = window.location.search;
 
 function parseQuery(queryString) {
 var queryString = window.location.search;
-var queries = queryString.slice(41);
+var url = "https://funnblox.github.io/PartnerPicker?"
+var queries = queryString.slice(url.length);
 var namesArray = queries.split(/[\s,]+/);
     console.log(namesArray)
     for (i = 0; i < namesArray.length; i++) { 
@@ -44,9 +45,9 @@ var namesArray = queries.split(/[\s,]+/);
 document.getElementById("class").innerHTML = "Class: " + names
 }
 // }
-
+parseQuery()
 function getUrl(text) {
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", "http://www.extrasleepy.com/randompartner?" + names);
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", "https://funnblox.github.io/PartnerPicker?" + names);
 }
 
 function SetGroupSize(){
