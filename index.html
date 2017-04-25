@@ -40,12 +40,11 @@ var queries = (queryString.replace('?', '')).replace(" ",'')
 // var queries = queryString.slice(url.length+1);
 var namesArray = ((queries).replace(" ",'')).split(/[\s,]+/);
 console.log(queries)
-if queries !== ""{
+if queries != ""{
 for (i = 0; i < namesArray.length; i++) { 
         names.splice(0,0,namesArray[i]);
     }
 }
-
 document.getElementById("class").innerHTML = "Class: " + names
 }
 // }
