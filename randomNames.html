@@ -35,7 +35,7 @@ var queryString = window.location.search;
 
 function parseQuery(queryString) {
 var queryString = window.location.search;
-var url = "https://funnblox.github.io/PartnerPicker?"
+var url = "https://funnblox.github.io/PartnerPicker/Class?"
 var queries = queryString.slice(url.length);
 var namesArray = queries.split(/[\s,]+/);
     console.log(namesArray)
@@ -47,7 +47,7 @@ document.getElementById("class").innerHTML = "Class: " + names
 // }
 parseQuery()
 function getUrl(text) {
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", "https://funnblox.github.io/PartnerPicker?" + names);
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", "https://funnblox.github.io/PartnerPicker/Class?" + names);
 }
 
 function SetGroupSize(){
