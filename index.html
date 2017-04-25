@@ -35,18 +35,19 @@ var queryString = window.location.search;
 
 function parseQuery(queryString) {
 var queryString = window.location.search;
+var queries = queryString.replace('?', '')
 // var url = "https://funnblox.github.io/PartnerPicker/?"
 console.log(queryString)
 // var queries = queryString.slice(url.length+1);
-var namesArray = queryString.split(/[\s,]+/);
-// console.log(queries)
+var namesArray = queries.split(/[\s,]+/);
+console.log(queries)
     for (i = 0; i < namesArray.length; i++) { 
         names.splice(0,0,namesArray[i]);
     }
 document.getElementById("class").innerHTML = "Class: " + names
 }
 // }
-parseQuery()
+// parseQuery()
 function getUrl(text) {
     window.prompt("Copy to clipboard: Ctrl+C, Enter", "https://funnblox.github.io/PartnerPicker/?" + names);
 }
