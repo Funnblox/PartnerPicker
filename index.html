@@ -39,7 +39,7 @@ var queries = (queryString.replace('?', '')).replace(" ",'')
 // var url = "https://funnblox.github.io/PartnerPicker/?"
 console.log(queryString)
 // var queries = queryString.slice(url.length+1);
-var namesArray = queries.split(/[\s,]+/);
+var namesArray = ((queries).replace(" ",'')).split(/[\s,]+/);
 console.log(queries)
     for (i = 0; i < namesArray.length; i++) { 
         names.splice(0,0,namesArray[i]);
