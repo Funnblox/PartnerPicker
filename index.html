@@ -92,6 +92,8 @@ input[type=text]:focus {
     <body onload="parseQuery()" >
 
         <br>
+         <div align = "right">
+        <button class="button button5" id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
         <div align = "center">
         <h1 style="color:black;"><b>Random Partners</b></h1>
         <br> 
@@ -108,7 +110,7 @@ input[type=text]:focus {
         <button class="button button3" onclick="removeName()">Remove Name(s)</button>
         <button class="button button4" onclick="beginRandomize()">Randomize</button>
         <button class="button button1" type="button1" onclick="location.reload();">Reset</button>
-        <button class="button button5" id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
+        <!-- <button class="button button5" id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button> -->
         <h1>
         <p id="output" style="color:black;"></p>
         <p id="class" style="color:black;"></p>
