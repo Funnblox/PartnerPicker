@@ -2,29 +2,115 @@
 
 <!DOCTYPE html>
 <html>
+<style>
+.button {
+    background-color: white; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.button2 {
+    
+    color: black; 
+    border: 2px solid #4CAF50;
+
+
+}
+.button2:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+.button1 {
+    
+    color: black; 
+    border: 2px solid #008CBA;
+}
+.button1:hover {
+    background-color: #008CBA; /* Green */
+    color: white;
+}
+.button3 {
+    
+    color: black; 
+    border: 2px solid #f44336;
+}
+.button3:hover {
+    background-color: #f44336; /* Green */
+    color: white;
+}
+.button4 {
+     
+    color: black; 
+    border: 2px solid #ffff00;
+}
+.button4:hover {
+    background-color: #ffff00; /* Green */
+    color: white;
+}
+.button5 {
+     
+    color: black; 
+    border: 2px solid #555555;
+}
+.button5:hover {
+    background-color: #555555; /* Green */
+    color: white;
+}
+.button6 {
+    
+    color: black; 
+    border: 2px solid #FF00FF;
+}
+.button6:hover {
+    background-color: #FF00FF; /* Green */
+    color: white;
+}
+input[type=text] {
+    width: 50%;
+    padding: 20px 40px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    }
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+</style>
     <body onload="parseQuery()" background="Kleindolph.jpg">
 
         <br>
         <div align = "center">
-        <h1 style="color:white;"><b>Random Partners</b></h1>
+        <h1 style="color:black;"><b>Random Partners</b></h1>
         <br> 
 
         <input type="text" id="myText" style="height:20px;" size="120" value="" onclick="JudgeInputAndSetPosition()"> 
        
         <br> 
-        <h1 id="GroupSizeTitle" style="color:white;" ></h1>
-         <input type="text" id="GroupSize" style="height:20px;" size="10" value="2" > 
-         <button onclick="SetGroupSize()">Set Group Size</button>
+        <h1 id="GroupSizeTitle" style="color:black;" ></h1>
+         <input type="z" id="GroupSize" style="height:20px;" size="10" value="2" > 
+         <button class="button button6" onclick="SetGroupSize()">Set Group Size</button>
         <br> 
          <br> 
-        <button onclick="addNames()">Add Name(s)</button>
-        <button onclick="removeName()">Remove Name(s)</button>
-        <button onclick="beginRandomize()">Randomize</button>
-        <button type="button1" onclick="location.reload();">Reset</button>
-        <button id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
+        <button class="button button2" onclick="addNames()">Add Name(s)</button>
+        <button class="button button3" onclick="removeName()">Remove Name(s)</button>
+        <button class="button button4" onclick="beginRandomize()">Randomize</button>
+        <button class="button button1" type="button1" onclick="location.reload();">Reset</button>
+        <button class="button button5" id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
         <h1>
-        <p id="output" style="color:white;"></p>
-        <p id="class" style="color:white;"></p>
+        <p id="output" style="color:black;"></p>
+        <p id="class" style="color:black;"></p>
         </h1>
 <script>
 
@@ -55,8 +141,8 @@ function getUrl(text) {
 }
 
 function SetGroupSize(){
-	Gs = document.getElementById("GroupSize").value
-	// var Gs = document.getElementById("GroupSize").value
+    Gs = document.getElementById("GroupSize").value
+    // var Gs = document.getElementById("GroupSize").value
   document.getElementById("GroupSizeTitle").innerHTML = "Group Size = " + Gs
 }
 
@@ -68,9 +154,9 @@ function beginRandomize() {
 
 function createRandom(names){
 for(z = 0; z<names.length; z++){
-    		var randomNumber = Math.floor(Math.random()*names.length);
+            var randomNumber = Math.floor(Math.random()*names.length);
 random.splice(0,0,randomNumber);
-    	}
+        }
     }
 
 function removeName() {
@@ -115,4 +201,3 @@ function addNames() {
         </div>
     </body>
 </html>
-
