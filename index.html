@@ -182,6 +182,7 @@ for (z = 0; z < Gs-1; z++){
     random1 = Math.floor(Math.random()*names.length);
         document.getElementById("output").innerHTML += names[random1] + "</br>";
         names.splice(random1,1);
+        z=0
 }
     if (names.length>0) {
         randomizeNames(names);
