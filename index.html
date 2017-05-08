@@ -171,7 +171,7 @@ function removeName() {
 
 function randomizeNames(names,Gs) {
     for (i = 0; i <  names.length; i++) { 
-for (z = 0; z < Gs-1; z++){
+for (z = 1; z < Gs; z++){
          var random1 = Math.floor(Math.random()*names.length);
         document.getElementById("output").innerHTML += names[random1] + "  +  ";
         names.splice(random1,1);
