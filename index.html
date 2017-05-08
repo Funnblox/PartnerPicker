@@ -184,7 +184,7 @@ for (z = 0; z < Gs-1; z++){
     random1 = Math.floor(Math.random()*names.length);
         document.getElementById("output").innerHTML += names[random1] + "</br>";
         names.splice(random1,1);
-        console.log(0)
+        console.log(z)
 }
     if (names.length>0) {
         randomizeNames(names);
