@@ -116,7 +116,8 @@ input[type=text]:focus {
         <p id="class" style="color:black;"></p>
         </h1>
 <script>
-
+var z = 1
+var d = 0
 var names = [];
 var random = [];
 var Gs = 2;
@@ -156,7 +157,7 @@ function beginRandomize() {
 }
 
 function createRandom(names){
-for(z = 0; z<names.length; z++){
+for(d= 0; d<names.length; d++){
             var randomNumber = Math.floor(Math.random()*names.length);
 random.splice(0,0,randomNumber);
         }
