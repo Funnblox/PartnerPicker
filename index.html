@@ -102,7 +102,7 @@ input[type=text]:focus {
        
         <br> 
         <h1 id="GroupSizeTitle" style="color:black;" ></h1>
-         <input type="z" id="GroupSize" style="height:20px;" size="10" value="2" > 
+         <input type="c" id="GroupSize" style="height:20px;" size="10" value="2" > 
          <button class="button button6" onclick="SetGroupSize()">Set Group Size</button>
         <br> 
          <br> 
@@ -137,7 +137,7 @@ for (i = 0; i < namesArray.length; i++) {
 }
 document.getElementById("class").innerHTML = "Class: " + names
 }
-// }
+// 
 // parseQuery()
 function getUrl(text) {
     window.prompt("Copy to clipboard: Ctrl+C, Enter", "https://funnblox.github.io/PartnerPicker/?" + names);
@@ -184,7 +184,7 @@ for (z = 1; z < Gs; z++){
     random1 = Math.floor(Math.random()*names.length);
         document.getElementById("output").innerHTML += names[random1] + "</br>";
         names.splice(random1,1);
-        Gs=2
+        
         console.log(Gs)
 }
     if (names.length>0) {
