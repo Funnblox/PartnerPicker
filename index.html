@@ -162,7 +162,10 @@ for (i = 0; i < namesArray.length; i++) {
         names.splice(0,0,namesArray[i]);
     }
 }
-document.getElementById("class").innerHTML = "Class: " + "</br>" + names
+for (i = 0; i <  names.length; i++) {
+    document.getElementById("class").innerHTML +=  names[i] + "</br>" 
+
+}
 }
 // }
 // parseQuery()
