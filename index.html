@@ -18,6 +18,22 @@
     cursor: pointer;
     border-radius: 4px;
 }
+.buttonz{
+background-color: white; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 .button2 {
     
     color: black; 
@@ -83,17 +99,30 @@ input[type=text] {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-    border-radius: 4px;
     }
 input[type=text]:focus {
     border: 3px solid #555;
 }
+input[type=z] {
+    width: 5%;
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    }
+input[type=z]:focus {
+    border: 3px solid #555;
+}
 </style>
-    <body onload="parseQuery()" >
-
-
-         <div align = "right">
-        <button class="button button5" id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
+    <body onload="parseQuery()" background="Kleindolph.jpg">
+<div align = "right">    
+<button class="buttonz button5" id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button>
+<div align = "left">  
+<h2 id="class" size="120" style="color:black;height:20px"></h2>
+        <br>
         <div align = "center">
         <h1 style="color:black;"><b>Random Partners</b></h1>
         <br> 
@@ -102,7 +131,7 @@ input[type=text]:focus {
        
         <br> 
         <h1 id="GroupSizeTitle" style="color:black;" ></h1>
-         <input type="c" id="GroupSize" style="height:20px;" size="10" value="2" > 
+         <input type="z" id="GroupSize" style="height:20px;" size="10" value="2" > 
          <button class="button button6" onclick="SetGroupSize()">Set Group Size</button>
         <br> 
          <br> 
@@ -110,14 +139,11 @@ input[type=text]:focus {
         <button class="button button3" onclick="removeName()">Remove Name(s)</button>
         <button class="button button4" onclick="beginRandomize()">Randomize</button>
         <button class="button button1" type="button1" onclick="location.reload();">Reset</button>
-        <!-- <button class="button button5" id="demo" onclick="getUrl(document.getElementById('demo').innerHTML)">Get Class Url</button> -->
         <h1>
         <p id="output" style="color:black;"></p>
-        <p id="class" style="color:black;"></p>
         </h1>
 <script>
-var z = 1
-var d = 0
+
 var names = [];
 var random = [];
 var Gs = 2;
@@ -130,15 +156,15 @@ var queries = (queryString.replace('?', '')).replace(" ",'')
 // var url = "https://funnblox.github.io/PartnerPicker/?"
 // var queries = queryString.slice(url.length+1);
 var namesArray = ((queries).replace(" ",'')).split(/[\s,]+/);
-// console.log(queries)
+console.log(queries)
 if (queries !== ""){
 for (i = 0; i < namesArray.length; i++) { 
         names.splice(0,0,namesArray[i]);
     }
 }
-document.getElementById("class").innerHTML = "Class: " + names
+document.getElementById("class").innerHTML = "Class: " + "</br>" + names
 }
-// 
+// }
 // parseQuery()
 function getUrl(text) {
     window.prompt("Copy to clipboard: Ctrl+C, Enter", "https://funnblox.github.io/PartnerPicker/?" + names);
@@ -152,56 +178,63 @@ function SetGroupSize(){
 
 function beginRandomize() {
     document.getElementById("output").innerHTML = ""; //clear previous randomized names
-    randomizeNames(names,Gs); //pass in a copy of the names array
+    randomizeNames(names.slice(),Gs); //pass in a copy of the names array
     //document.getElementById("output").innerHTML += "</br>"; //instead of clearing, could add a new line between
 }
 
 function createRandom(names){
-for(d= 0; d<names.length; d++){
+for(z = 0; z<names.length; z++){
             var randomNumber = Math.floor(Math.random()*names.length);
 random.splice(0,0,randomNumber);
         }
     }
 
 function removeName() {
+     document.getElementById("class").innerHTML = "Class: " + "</br>"
  var x = document.getElementById("myText").value;
  names.splice(names.indexOf(x),1)
  document.getElementById("myText").value=""
- document.getElementById("class").innerHTML = "Class: " + names
+   for (i = 0; i <  names.length; i++) {
+    document.getElementById("class").innerHTML +=  names[i] + "</br>" 
+
+}
 }
 
 function randomizeNames(names,Gs) {
     for (i = 0; i <  names.length; i++) { 
-for (z = 1; z < Gs; z++){
+for (z = 0; z < Gs-1; z++){
          var random1 = Math.floor(Math.random()*names.length);
         document.getElementById("output").innerHTML += names[random1] + "  +  ";
         names.splice(random1,1);
         // var random2 = Math.floor(Math.random()*names.length);
         // document.getElementById("output").innerHTML += names[random2] + "</br>";
         // names.splice(random2,1);
-        console.log(1)
-}
-
+    }
     random1 = Math.floor(Math.random()*names.length);
         document.getElementById("output").innerHTML += names[random1] + "</br>";
         names.splice(random1,1);
-        
-        console.log(Gs)
 }
     if (names.length>0) {
-        randomizeNames(names,Gs);
+        randomizeNames(names);
     }
 }
 
 function addNames() {
+    document.getElementById("class").innerHTML = "Class: " + "</br>"
     var x = document.getElementById("myText").value;
+
     var namesArray = x.split(/[\s,]+/);
     for (i = 0; i < namesArray.length; i++) { 
         names.splice(0,0,namesArray[i]);
     }
     document.getElementById("myText").value=""
-   ;
-    document.getElementById("class").innerHTML = "Class: " + names
+   
+
+   for (i = 0; i <  names.length; i++) {
+    document.getElementById("class").innerHTML +=  names[i] + "</br>" 
+
+}
+
 }
 
 </script>
