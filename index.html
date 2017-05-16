@@ -197,7 +197,11 @@ random.splice(0,0,randomNumber);
 function removeName() {
      document.getElementById("class").innerHTML = "Class: " + "</br>"
  var x = document.getElementById("myText").value;
- names.splice(names.indexOf(x),1)
+var j =names.indexOf(x)
+console.log(j)
+if (j!=-1){
+ names.splice(j,1)
+}
  document.getElementById("myText").value=""
    for (i = 0; i <  names.length; i++) {
     document.getElementById("class").innerHTML +=  names[i] + "</br>" 
