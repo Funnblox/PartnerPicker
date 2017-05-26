@@ -1,17 +1,14 @@
 
 # PartnerPicker
-Random Group Picker
+Random Group Maker
 
-xyz
+https://funnblox.github.io/PartnerPicker/
 
-I Changed the ReadME 
-js randomization applications
+This application creates random groups!
 
-The name randomizer and name caller will accept a stream of names separated by a space or a comma
-The text file is just a list of names for testing the application.  
-
-See the applications in action here:<br>
-<a href= "http://www.extrasleepy.com/randompartner">http://www.extrasleepy.com/randompartner</a><br>
-<a href= "http://www.extrasleepy.com/randomcall">http://www.extrasleepy.com/randomcall</a><br>
-<a href= "http://www.extrasleepy.com/randomizer">http://www.extrasleepy.com/randomizer</a>
-
+To add names: Type in names, separated by comma or space, and click Add Name(s)
+To save a list of names: Click Get Class URL and copy paste the highlighted text
+To remove names: Type in a name, and click Remove Name
+Set size of groups: Type in desired group size and click Set Group Size
+When you are ready, Randomize!
+You can randomize as many times as you would like to
