@@ -13,7 +13,7 @@ Set size of groups: Type in desired group size and click Set Group Size
 When you are ready, Randomize!                                              
 You can randomize as many times as you would like to
 
-![Alt text](randomgroups.png?raw=true)
+![Asdf](randomgroups.png?raw=true)
 
 
 ![Alt text](randomgroups1.png?raw=true)
